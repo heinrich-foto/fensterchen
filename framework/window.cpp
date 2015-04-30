@@ -126,8 +126,8 @@ void Window::update()
   glfwSwapBuffers(m_window);
   glfwPollEvents();
 
-  // prepare next frame
-  glViewport(0, 0, m_size.x, m_size.y);
+  // prepare next frame (with the new Framebuffersize)
+  glViewport(0, 0, windowSize().x, windowSize().y);
   glClear(GL_COLOR_BUFFER_BIT);
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();

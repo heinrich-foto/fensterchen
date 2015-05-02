@@ -52,7 +52,27 @@ void Point2D::rotate(double const& radiant)
     x_ = (x*cos(radiant_))-(y*sin(radiant_));
     y_ = (x*sin(radiant_))+(y*cos(radiant_));
 }
-
+void Point2D::rotate(double const& radiant, Point2D const& center)
+{
+    rotate(radiant, center, false);
+}
+void Point2D::rotate(double const& radiant, Point2D const& center, bool filled)
+/* Bool Filled = true führt zu ausgeülltem Kreis. sollte viellcht in Klasse Kreis überladen werden?
+ Diese benötigt diese Art der Drehung für die Darstellung. Derzeit.
+ Ansonsten wird nur die Kontur gemalt. */
+{ double x,y = 0;
+    if ( !filled ) {
+        x = -center.x()+x_;
+        y = -center.y()+y_;
+    } else {
+        x = center.x()-x_;
+        y = center.y()-y_;
+    }
+    Point2D r{x,y};
+    r.rotate(radiant);
+    x_ = r.x() + center.x();
+    y_ = r.y() + center.y();
+}
 
 
 // Streamopperator für die std::cout << Ausgabe der Farbe.

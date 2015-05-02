@@ -34,6 +34,8 @@ public:
     
     void translate(double const& x_transition, double const& y_transition);
     void rotate(double const& radiant);
+    void rotate(double const& radiant, Point2D const& center);
+    void rotate(double const& radiant, Point2D const& center, bool filled);
     // void rotate(double const& radiant, Point2D const& point);
     // void rotate2(double const& radient, Point2D const& point);
     

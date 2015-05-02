@@ -61,20 +61,15 @@ void Circle::draw(Window &win) const
 
 void Circle::draw(Window & win, Color const& color, int const& segment) const
 {
-    //double x = center_.x();
-    //double y = center_.y();
-    //double R = radius_;
-    //Color = center_.color_;
-    
-//    Point2D point{(center_.x()+radius_),(center_.y()),color};
-//    Point2D point2=point;
-//    point.rotate((2*M_PI)/segment,center_);
-//    for (int i = 0; i<=segment; ++i)
-//    {
-//        win.drawLine(point2.x(),point2.y(),point.x(),point.y(),color.r_,color.g_,color.b_);
-//        point.rotate((2*M_PI)/segment,center_);
-//        point2.rotate((2*M_PI)/segment,center_);
-//    }
+    Point2D point{(center_.x()+radius_),(center_.y()),color};
+    Point2D point2=point;
+    point.rotate((2*M_PI)/segment,center_);
+    for (int i = 0; i<=segment; ++i)
+    {
+        win.drawLine(point2.x(),point2.y(),point.x(),point.y(),color.r_,color.g_,color.b_);
+        point.rotate((2*M_PI)/segment,center_);
+        point2.rotate((2*M_PI)/segment,center_);
+    }
 }
 void Circle::draw(Window & win, int const& segment) const
 {
@@ -87,16 +82,16 @@ void Circle::draw(Window & win, Color const& color) const
 }
 void Circle::draw_full(Window & win) const
 {
-//    int segment = 360;
-//    Point2D point{(center_.x()+radius_),(center_.y()),color_};
-//    Point2D point2=point;
-//    point.rotate2((2*M_PI)/segment,center_);
-//    for (int i = 0; i<=segment; ++i)
-//    {
-//        win.drawLine(point2.x(),point2.y(),point.x(),point.y(),color_.r_,color_.g_,color_.b_);
-//        point.rotate2((2*M_PI)/segment,center_);
-//        point2.rotate2((2*M_PI)/segment,center_);
-//    }
+    int segment = 360;
+    Point2D point{(center_.x()+radius_),(center_.y()),color_};
+    Point2D point2=point;
+    point.rotate((2*M_PI)/segment,center_, true);
+    for (int i = 0; i<=segment; ++i)
+    {
+        win.drawLine(point2.x(),point2.y(),point.x(),point.y(),color_.r_,color_.g_,color_.b_);
+        point.rotate((2*M_PI)/segment,center_, true);
+        point2.rotate((2*M_PI)/segment,center_, true);
+    }
 }
 
 void Circle::color(Color const& colorValue)
@@ -116,7 +111,7 @@ void Circle::translate(double const& x_transition, double const& y_transition)
 
 float Circle::area() const
 {
-    return M_PI * pow(radius_,0.2);
+    return M_PI * pow(radius_,2);
 }
 
 void Circle::area(double const& area_value)

@@ -83,7 +83,7 @@ double Rectangle::height() const {
 
 void Rectangle::draw(Window & win) const {
     // this -> nicht notwendig, weil Classe Kennt seine Membermethoden.
-    this->draw(win,color_);
+    draw(win,color_);
 }
 
 void Rectangle::draw(Window & win, Color const& color) const

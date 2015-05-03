@@ -16,6 +16,8 @@ Window::Window(glm::ivec2 const& windowsize)
   glfwWindowHint(GLFW_RESIZABLE, 0);
   m_window = glfwCreateWindow(windowsize.x, windowsize.y, m_title.c_str(), nullptr, nullptr);
 
+  double scale_factor = windowSize().x/windowsize.x;
+
   if (m_window) {
     glfwSetWindowUserPointer(m_window, this);
     assert(m_window != nullptr);
@@ -36,10 +38,10 @@ Window::Window(glm::ivec2 const& windowsize)
 
     glEnable(GL_POINT_SMOOTH);
     glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);
-    glPointSize(5.0f);
+    glPointSize(5.0f*scale_factor);
     glEnable(GL_POINT_SMOOTH);
 
-    glLineWidth(2.0f);
+    glLineWidth(2.0f*scale_factor);
     glEnable(GL_LINE_SMOOTH);
     glClearColor(1.0f,1.0f,1.0f,1.0f);
   }
@@ -126,8 +128,8 @@ void Window::update()
   glfwSwapBuffers(m_window);
   glfwPollEvents();
 
-  // prepare next frame
-  glViewport(0, 0, m_size.x, m_size.y);
+  // prepare next frame (with the new Framebuffersize)
+  glViewport(0, 0, windowSize().x, windowSize().y);
   glClear(GL_COLOR_BUFFER_BIT);
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();

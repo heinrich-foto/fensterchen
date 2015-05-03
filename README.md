@@ -1,10 +1,33 @@
 fensterchen
 ===========
+In diesem Projekt werden einfache Klassen implementiert (noch ohne Vererbung). Es lassen sich in einem Fenster einfache Geometrische Formen zeichen. Kreise und Rechtecke als Konturen mit unterschiedlichen Farben. Ebenso sind bereits Punkte und Linien möglich. 
+Kreise bieten des weiteren die Möglichkeit gefüllt zu sein. 
 
-Framework for exercise 02.
+Nach dem Kompilieren dieses Projekts stehen im entsprechenden Build Ordner zwei ausführbare Dateien zur Verfügung. Entscheidend ist die 
+`./build/Release/Debug/example`, welche das Fensterchen startet. Die Tests werden direkt bei der Erstellung mittels make ausgeführt.
 
-Add your classes to the `framework/` directory and extend `source/tests.cpp`
-with your test cases.
+**Projekt in Xcode importieren** und ggf im Terminal bauen:
+```
+mkdir xcode
+cd xcode
+cmake -G "Xcode" ..
+
+xcodebuild -list
+xcodebuild
+```
+es wäre auch normal das Kompilieren mittel `cmake ..` und anschließendem `make` möglich.
+
+#Überladung
+Unter gleichem Bezeichner lassen sich unterschiedliche Methoden aufrufen, diese werden unterscheidbar durch ihre Signaturen überladen. So ist es z.B. möglich Getter und Setter Methoden unter gleichem Namen anzubieten (siehe Glossar, Beispiel). Ebenso bietet C++ die Möglichkeit Operatoren zu überladen. Häufige Verwendung bei Vergleichsoperatoren oder dem Streamoperator. 
+
+#Includeguardes 
+```
+#ifndef BUW_POINT2D_HPP 
+#define BUW_POINT2D_HPP
+// Point2d class declaration 
+#endif // BUW_POINT2D_HPP
+```
+Gehören zu den Präprozessoranweisungen. Sie dienen der bedingten Kompilierung und sind Textersetzungswerkzeuge. Oben beschriebene verhindern die Mehrfachinkludierung der Headerdatei. Würde die Header Datei in einer anderen eingebunden werden, dann wäre der Bezeichner bereits definiert und die entsprechenden Textstellen müssen nicht erneut eingefügt werden. Würden sie eingefügt werden, würde der Kompiler Fehler ausgeben, da eine Mehrfache Deklaration des gleichen Bezeichners und gleicher Signatur nicht möglich ist.
 
 #Glossar
 - **Klasse**n	stellen einen entscheidenden Bestandteil der Objektorientierten Programmierung dar. Sie sind in C++ die zentrale Datenstruktur, welche zusammengehörige Daten mit ihren zugehörigen Funktionen vereint.

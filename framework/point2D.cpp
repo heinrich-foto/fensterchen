@@ -56,8 +56,10 @@ void Point2D::rotate(double const& radiant, Point2D const& center)
 {
     rotate(radiant, center, false);
 }
+
 void Point2D::rotate(double const& radiant, Point2D const& center, bool filled)
 /* Bool Filled = true führt zu ausgeülltem Kreis. sollte viellcht in Klasse Kreis überladen werden?
+ Oder eine adapter Klasse shape eingeführt werden.
  Diese benötigt diese Art der Drehung für die Darstellung. Derzeit.
  Ansonsten wird nur die Kontur gemalt. */
 { double x,y = 0;

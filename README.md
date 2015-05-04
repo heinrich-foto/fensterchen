@@ -30,7 +30,7 @@ Unter gleichem Bezeichner lassen sich unterschiedliche Methoden aufrufen, diese 
 Gehören zu den Präprozessoranweisungen. Sie dienen der bedingten Kompilierung und sind Textersetzungswerkzeuge. Oben beschriebene verhindern die Mehrfachinkludierung der Headerdatei. Würde die Header Datei in einer anderen eingebunden werden, dann wäre der Bezeichner bereits definiert und die entsprechenden Textstellen müssen nicht erneut eingefügt werden. Würden sie eingefügt werden, würde der Kompiler Fehler ausgeben, da eine Mehrfache Deklaration des gleichen Bezeichners und gleicher Signatur nicht möglich ist.
 
 #Glossar
-- **Klasse**n	stellen einen entscheidenden Bestandteil der Objektorientierten Programmierung dar. Sie sind in C++ die zentrale Datenstruktur, welche zusammengehörige Daten mit ihren zugehörigen Funktionen vereint. Sie können von anderen Klassen abgeleitet werden.
+- **Klasse**n	stellen einen entscheidenden Bestandteil der Objektorientierten Programmierung dar. Sie sind in C++ die zentrale Strukturen, welche zusammengehörige Daten mit ihren zugehörigen Funktionen vereint. Sie können von anderen Klassen abgeleitet werden.
 - ** Objekt **	Instanz einer Klasse
 - **Instanziierung **	stellt die Erzeugung eines konkreten Objekts einer Klasse dar. Hierzu wird der *Standardkonstruktor* der Klasse aufgerufen.
 - **Instanz **	ist ein konkretes Exemplar mit konkreter Ausprägung. Auf diesem kann gearbeitet werden (Memberfunktionen aufrufen) bis es durch den Destruktor wieder zerstört wird (Lebenszeit).
@@ -48,8 +48,8 @@ Gehören zu den Präprozessoranweisungen. Sie dienen der bedingten Kompilierung 
 - **Default-Konstruktor **	== Standardkonstruktor? Er dient der Initialen Belegung der Membervariablen, möglichst mit für das Objekt sinnvollen Standard Werten, mittels der Initialisierungsliste.
 - **Destruktor **	Wird aufgerufen, wenn das Objekt zerstört wird (immer wenn der Gültigkeitsbereich des Objektes endet). Es können noch letzte Aktionen mit dem Objekt ausgeführt werden, Ressourcen freigeben.
 - **Membervariablen **	stellen die internen Daten eines Objektes dar. Können über ihren Namen zugegriffen werden, es sei denn sie sind als Public deklariert.
-- **Klassendeklaration **	Erfolgt in der Header-Datei. Es werden die in einer Klasse enthaltenen Elemente (Membervariablen und -Funktionen) festgelegt.
-- **Initialisierungsliste / Memberinitialisiererliste class**	
+- **Klassendeklaration **	führt einen Bezeichner als Klasse ein. z.B. mittels Forwarddeklaration `class Name;` 
+- **Initialisierungsliste / Memberinitialisiererliste class**, bietet Konstruktoren die Möglichkeite direkt mit einem Wert zu initialsieren. Ohne Initialisierungsliste, müsste die Membervarbiable angelegt werden, intern mit einem initialen Wert automatisch belegt werden und dann der neue Wert über den Skope des Konstruktors neu zugewiesen werden. Mittels Initialisierungsliste lässt sich direkt ein Wert initial zuweisen.
 - **struct **	ist eine einfache Datenstruktur ähnlich einer Klasse. Standartmäßig ist das Interface Public. Eignet sich für Datentransferobjekte.
 - **Datentransferobjekt ** (DTO)	bündelt mehrere einfache Datenstrukturen und Typen zu einem Objekt, welches leicht über einen einzigen Programmaufruf übertragen werden kann.
 - **Statische Typisierung **	Datentyp einer Variable wird bereits zur Kompilierung festgelegt. Templates in C++ versuchen hier eine Möglichkeit zu bieten, *etwas dynamischer* zu werden.

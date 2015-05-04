@@ -30,13 +30,13 @@ Unter gleichem Bezeichner lassen sich unterschiedliche Methoden aufrufen, diese 
 Gehören zu den Präprozessoranweisungen. Sie dienen der bedingten Kompilierung und sind Textersetzungswerkzeuge. Oben beschriebene verhindern die Mehrfachinkludierung der Headerdatei. Würde die Header Datei in einer anderen eingebunden werden, dann wäre der Bezeichner bereits definiert und die entsprechenden Textstellen müssen nicht erneut eingefügt werden. Würden sie eingefügt werden, würde der Kompiler Fehler ausgeben, da eine Mehrfache Deklaration des gleichen Bezeichners und gleicher Signatur nicht möglich ist.
 
 #Glossar
-- **Klasse**n	stellen einen entscheidenden Bestandteil der Objektorientierten Programmierung dar. Sie sind in C++ die zentrale Datenstruktur, welche zusammengehörige Daten mit ihren zugehörigen Funktionen vereint.
+- **Klasse**n	stellen einen entscheidenden Bestandteil der Objektorientierten Programmierung dar. Sie sind in C++ die zentrale Datenstruktur, welche zusammengehörige Daten mit ihren zugehörigen Funktionen vereint. Sie können von anderen Klassen abgeleitet werden.
 - ** Objekt **	Instanz einer Klasse
 - **Instanziierung **	stellt die Erzeugung eines konkreten Objekts einer Klasse dar. Hierzu wird der *Standardkonstruktor* der Klasse aufgerufen.
 - **Instanz **	ist ein konkretes Exemplar mit konkreter Ausprägung. Auf diesem kann gearbeitet werden (Memberfunktionen aufrufen) bis es durch den Destruktor wieder zerstört wird (Lebenszeit).
 - **Statische Objekterzeugung ** Zur Kompilierzeit erzeugtes Objekt.
-- **Dynamische Objekterzeugung **	Zur Laufzeit erzeugtes Objekt (mittels z.B. `new).
-- **Methode **	Unterprogramme (Funktionen) welche das Verhalten von Objekten implementieren.
+- **Dynamische Objekterzeugung **	Zur Laufzeit erzeugtes Objekt (mittels z.B. `new`).
+- **Methode **	Unterprogramme (Funktionen) welche das Verhalten von Objekten implementieren und auf diese als Teil der Klasse aufgerufen werden.
 - **Getter **	Methode zum Auslesen eines Wertes. `int radius() const;`
 - **Setter **	Methode zum Setzen eines Wertes. `void radius(int value);`
 - **Kapselung **	*information hiding* verbigt Daten und Informationen vor dem Zugriff von außen, es werden nur definierte Schnittstellen zum Zugriff auf diese angeboten (Black-Box). Somit können sich interne Strukturen ändern, ohne dass sich der Zugriff auf das Objekt verändert.
@@ -49,9 +49,9 @@ Gehören zu den Präprozessoranweisungen. Sie dienen der bedingten Kompilierung 
 - **Destruktor **	Wird aufgerufen, wenn das Objekt zerstört wird (immer wenn der Gültigkeitsbereich des Objektes endet). Es können noch letzte Aktionen mit dem Objekt ausgeführt werden, Ressourcen freigeben.
 - **Membervariablen **	stellen die internen Daten eines Objektes dar. Können über ihren Namen zugegriffen werden, es sei denn sie sind als Public deklariert.
 - **Klassendeklaration **	Erfolgt in der Header-Datei. Es werden die in einer Klasse enthaltenen Elemente (Membervariablen und -Funktionen) festgelegt.
-- **Initialisierungsliste / Memberinitialisiererliste class **	
-- **struct **	ist eine Datenstruktur ähnlich einer Klasse, nur sehr viel einfacher. Sie bietet keine Privaten Memberfunktionen, sowie private Membervariablen. Eignet sich für einfache Datenstrukturen.
+- **Initialisierungsliste / Memberinitialisiererliste class**	
+- **struct **	ist eine einfache Datenstruktur ähnlich einer Klasse. Standartmäßig ist das Interface Public. Eignet sich für Datentransferobjekte.
 - **Datentransferobjekt ** (DTO)	bündelt mehrere einfache Datenstrukturen und Typen zu einem Objekt, welches leicht über einen einzigen Programmaufruf übertragen werden kann.
 - **Statische Typisierung **	Datentyp einer Variable wird bereits zur Kompilierung festgelegt. Templates in C++ versuchen hier eine Möglichkeit zu bieten, *etwas dynamischer* zu werden.
-- **Dynamische Typisierung **, der Datentyp ist erst zur Laufzeit bekannt und kann sich während dieser beliebig ändern. z.B. in Python.
+- **Dynamische Typisierung **, der Datentyp ist erst zur Laufzeit bekannt und kann sich während dieser beliebig ändern. z.B. in Python haben die Werte ihre Typen, nicht die Variable.
 - **Framework**, stellt eine gewisse Funktionalität bereit, über wohl definierte Schnittstellen. Der Programmierer kann dieses nutzen, ohne genau wissen zu müssen, wie die Implementierung erfolgt, es sind somit nur die Schnittstellen bekannt.

@@ -56,7 +56,7 @@ TEST_CASE("Point2D - translate(double, double)","[]")
     REQUIRE(point.y() == Approx( 0.0));
 }
 
-TEST_CASE("Circle - construxtor","[circle()]")
+TEST_CASE("Circle - constructor","[circle()]")
 {
     Circle c;
     REQUIRE(c.center().x() == Approx(0.0));

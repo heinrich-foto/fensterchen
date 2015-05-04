@@ -126,12 +126,5 @@ float Rectangle::circumference() const
 
 bool Rectangle::is_inside(Point2D point) const
 {
-    if ( (leftdowncorner_.x()<= point.x()) && (leftdowncorner_.x() + lenght_x_ >= point.x()) && (leftdowncorner_.y() <= point.y()) && (leftdowncorner_.y()+lenght_y_ >= point.y()) )
-    {
-        return true;	
-    }
-    else
-    {
-        return false;
-    }
+    return ( (leftdowncorner_.x()<= point.x()) && (leftdowncorner_.x() + lenght_x_ >= point.x()) && (leftdowncorner_.y() <= point.y()) && (leftdowncorner_.y()+lenght_y_ >= point.y()) );
 }

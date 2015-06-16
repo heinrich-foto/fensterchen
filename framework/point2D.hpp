@@ -46,4 +46,7 @@ private:
 };
 
 
+// Punkte nicht addieren.
+//affiner Raum
+
 #endif // BUW_POINT2D_HPP
